@@ -1,0 +1,37 @@
+Stacked KPI HTML = 
+-- Variables for Top Card
+VAR Units = FORMAT([Total Units Sold], "#,##0")
+VAR AvgShip = FORMAT([Avg Shipping Cost], "#,##0.00")
+
+-- Variables for Bottom Card
+VAR AvgPrice = FORMAT([Avg Selling Price], "#,##0.00")
+VAR RevRatio = FORMAT([Cost to Revenue Ratio], "#,##0.00")
+
+RETURN
+"
+<div style='background-color: black; color: white; padding: 15px; font-family: Segoe UI, sans-serif; display: flex; flex-direction: column; gap: 20px; width: fit-content; border-radius: 4px;'>
+    
+    <div>
+        <div style='background-color: white; color: #333; padding: 4px 8px 8px 8px; border-radius: 2px; min-width: 180px;'>
+            <div style='font-size: 10px; font-weight: 700; color: #888; margin-bottom: -2px;'>Units Sold</div>
+            <div style='font-size: 28px; font-weight: 800; color: #000; line-height: 1.1;'>" & Units & "</div>
+        </div>
+        <div style='margin-top: 10px; border-top: 1px solid #333; padding-top: 6px;'>
+            <span style='font-size: 13px; color: #aaa; font-weight: bold;'>Avg Shipping Cost : </span>
+            <span style='font-size: 14px; font-weight: 600; color: white;'>" & AvgShip & "</span>
+        </div>
+    </div>
+
+    <div>
+        <div style='background-color: white; color: #333; padding: 4px 8px 8px 8px; border-radius: 2px; min-width: 180px;'>
+            <div style='font-size: 10px; font-weight: 700; color: #888; margin-bottom: -2px;'>Avg Selling Price</div>
+            <div style='font-size: 28px; font-weight: 800; color: #000; line-height: 1.1;'>" & AvgPrice & "</div>
+        </div>
+        <div style='margin-top: 10px; border-top: 1px solid #333; padding-top: 6px;'>
+            <span style='font-size: 13px; color: #aaa; font-weight: bold;'>Revenue Ratio : </span>
+            <span style='font-size: 14px; font-weight: 600; color: white;'>" & RevRatio & "</span>
+        </div>
+    </div>
+
+</div>
+"
