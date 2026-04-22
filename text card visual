@@ -1,0 +1,43 @@
+Customer Card HTML = 
+VAR CustomerName =
+    SELECTEDVALUE('Sales Dataset'[CustomerName], "Select a Customer")
+
+RETURN
+"
+<style>
+.container {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: linear-gradient(43deg, rgb(65,88,208) 0%, rgb(200,80,192) 46%, rgb(255,204,112) 100%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 22px;
+  transition: 0.3s ease;
+}
+
+#card:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+</style>
+
+<div class='container'>
+  <div id='card'>
+    " & CustomerName & "
+  </div>
+</div>
+"
